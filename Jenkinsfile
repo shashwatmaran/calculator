@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        jdk 'JAVA_HOME'
+        jdk 'jdk21'
     }
 
     stages {
@@ -23,6 +23,18 @@ pipeline {
             steps {
                 bat 'java Hello Jenkinsfile'
             }
+        }
+    }
+
+    post {
+        success {
+            echo 'BUILD SUCCESSFUL ✅'
+        }
+        failure {
+            echo 'BUILD FAILED ❌'
+        }
+        always {
+            echo 'Pipeline execution finished.'
         }
     }
 }
