@@ -1,7 +1,6 @@
 import math
 import operator
 
-# ------------------ OPERATORS ------------------
 OPS = {
     '+': (1, operator.add),
     '-': (1, operator.sub),
@@ -11,7 +10,6 @@ OPS = {
     '^': (3, operator.pow)
 }
 
-# ------------------ TOKENIZER ------------------
 def tokenize(expr):
     tokens = []
     num = ""
@@ -35,7 +33,6 @@ def tokenize(expr):
     return tokens
 
 
-# ------------------ SHUNTING YARD ------------------
 def to_postfix(tokens):
     output = []
     stack = []
@@ -67,8 +64,6 @@ def to_postfix(tokens):
 
     return output
 
-
-# ------------------ EVALUATOR ------------------
 def eval_postfix(postfix):
     stack = []
 
@@ -93,15 +88,11 @@ def eval_postfix(postfix):
 
     return stack[0]
 
-
-# ------------------ CALCULATOR ------------------
 def calculate(expr):
     tokens = tokenize(expr)
     postfix = to_postfix(tokens)
     return eval_postfix(postfix)
 
-
-# ------------------ UI ------------------
 def main():
     print("===== Python Calculator =====")
     print("Type 'help' for instructions")
