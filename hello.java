@@ -15,7 +15,7 @@ public class Hello {
         // Show Java runtime info (useful in CI debugging)
         System.out.println("\nRunning on:");
         System.out.println("Java Version: " + System.getProperty("java.version"));
-        System.out.println("OS: " + System.getProperty("os.name"));
+        System.out.println("OS: " + System.getProperty("os.name"))
 
         System.out.println("\nBuild Successful ✅");
     }
